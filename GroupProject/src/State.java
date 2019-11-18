@@ -1,24 +1,23 @@
-package mainPackage;
 
 public class State {
-	int langlength;
-	State[] transitionFns;
+	int lang;
+	State[] trans;
 	char id;
-	boolean accepting;
+	boolean accepted;
 	
-	public State(int length, boolean accept, char id) {
-		this.langlength = length;
-		this.transitionFns = new State[length];
+	public State(int alphabet, boolean accept, char id) {
+		this.lang = alphabet;
+		this.trans = new State[alphabet];
 		this.id = id;
-		this.accepting = accept;
+		this.accepted = accept;
 	}
 	
 	public void addTransition(int index, State s) {
-		this.transitionFns[index] = s;	
+		this.trans[index] = s;	
 	}
 	
 	public State getTransition(int index) {
-		return this.transitionFns[index];
+		return this.trans[index];
 	}
 
 }

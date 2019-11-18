@@ -1,13 +1,10 @@
-package mainPackage;
 
 public class DFA {
-	//private int langLength;
-	//private State[] states;
+
 	private State start;
 	
-public DFA(int length, State[] states, State start) {
-	//this.langLength = length;
-	//this.states = states;
+public DFA(int alphabet, State[] states, State start) {
+
 	this.start=start;
 }
 	public boolean checkString(String string) {
@@ -20,7 +17,7 @@ public DFA(int length, State[] states, State start) {
 			current = current.getTransition(next);
 		}
 		
-		if(current.accepting) {
+		if(current.accepted) {
 			return true;
 		}
 		else {
